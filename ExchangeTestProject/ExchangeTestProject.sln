@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailClientDownloader", "MonitoringApp\EmailClientDownloader.csproj", "{C1540FC6-CAFA-4B8B-BAF7-55B5A5285D23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebclientDownloader", "WebclientDownloader\WebclientDownloader.csproj", "{FCD223D9-3EBF-4BA2-B3E7-67F01E9DD17C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1540FC6-CAFA-4B8B-BAF7-55B5A5285D23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1540FC6-CAFA-4B8B-BAF7-55B5A5285D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1540FC6-CAFA-4B8B-BAF7-55B5A5285D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1540FC6-CAFA-4B8B-BAF7-55B5A5285D23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCD223D9-3EBF-4BA2-B3E7-67F01E9DD17C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCD223D9-3EBF-4BA2-B3E7-67F01E9DD17C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCD223D9-3EBF-4BA2-B3E7-67F01E9DD17C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCD223D9-3EBF-4BA2-B3E7-67F01E9DD17C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72D21EE6-8682-434C-BDFC-926852D79328}
+	EndGlobalSection
+EndGlobal

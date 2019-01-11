@@ -1,0 +1,6 @@
+C:\Users\Mark\Source\repos\RtfHtmlConverter\ClassLibrary1\obj\Debug\MarkupConverter.csprojAssemblyReference.cache
+C:\Users\Mark\Source\repos\RtfHtmlConverter\ClassLibrary1\obj\Debug\MarkupConverter.csproj.CoreCompileInputs.cache
+C:\Users\Mark\Source\repos\RtfHtmlConverter\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\Mark\Source\repos\RtfHtmlConverter\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\Mark\Source\repos\RtfHtmlConverter\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\Mark\Source\repos\RtfHtmlConverter\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

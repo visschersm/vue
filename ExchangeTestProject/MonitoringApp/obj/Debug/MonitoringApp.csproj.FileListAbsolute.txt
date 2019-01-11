@@ -1,0 +1,15 @@
+C:\Users\Mark\Source\repos\ExchangeTestProject\MonitoringApp\bin\Debug\MonitoringApp.exe.config
+C:\Users\Mark\Source\repos\ExchangeTestProject\MonitoringApp\bin\Debug\MonitoringApp.exe
+C:\Users\Mark\Source\repos\ExchangeTestProject\MonitoringApp\bin\Debug\MonitoringApp.pdb
+C:\Users\Mark\Source\repos\ExchangeTestProject\MonitoringApp\bin\Debug\Microsoft.Exchange.WebServices.Auth.dll
+C:\Users\Mark\Source\repos\ExchangeTestProject\MonitoringApp\bin\Debug\Microsoft.Exchange.WebServices.dll
+C:\Users\Mark\Source\repos\ExchangeTestProject\MonitoringApp\bin\Debug\Microsoft.IdentityModel.Extensions.dll
+C:\Users\Mark\Source\repos\ExchangeTestProject\MonitoringApp\bin\Debug\Microsoft.Exchange.WebServices.pdb
+C:\Users\Mark\Source\repos\ExchangeTestProject\MonitoringApp\bin\Debug\Microsoft.Exchange.WebServices.xml
+C:\Users\Mark\Source\repos\ExchangeTestProject\MonitoringApp\bin\Debug\Microsoft.Exchange.WebServices.Auth.pdb
+C:\Users\Mark\Source\repos\ExchangeTestProject\MonitoringApp\bin\Debug\Microsoft.Exchange.WebServices.Auth.xml
+C:\Users\Mark\Source\repos\ExchangeTestProject\MonitoringApp\obj\Debug\MonitoringApp.csprojAssemblyReference.cache
+C:\Users\Mark\Source\repos\ExchangeTestProject\MonitoringApp\obj\Debug\MonitoringApp.csproj.CoreCompileInputs.cache
+C:\Users\Mark\Source\repos\ExchangeTestProject\MonitoringApp\obj\Debug\MonitoringApp.csproj.CopyComplete
+C:\Users\Mark\Source\repos\ExchangeTestProject\MonitoringApp\obj\Debug\MonitoringApp.exe
+C:\Users\Mark\Source\repos\ExchangeTestProject\MonitoringApp\obj\Debug\MonitoringApp.pdb

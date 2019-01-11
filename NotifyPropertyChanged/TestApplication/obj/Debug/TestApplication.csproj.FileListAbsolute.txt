@@ -1,0 +1,7 @@
+C:\Users\Mark\Source\repos\NotifyPropertyChanged\TestApplication\bin\Debug\TestApplication.exe.config
+C:\Users\Mark\Source\repos\NotifyPropertyChanged\TestApplication\bin\Debug\TestApplication.exe
+C:\Users\Mark\Source\repos\NotifyPropertyChanged\TestApplication\bin\Debug\TestApplication.pdb
+C:\Users\Mark\Source\repos\NotifyPropertyChanged\TestApplication\obj\Debug\TestApplication.csprojAssemblyReference.cache
+C:\Users\Mark\Source\repos\NotifyPropertyChanged\TestApplication\obj\Debug\TestApplication.csproj.CoreCompileInputs.cache
+C:\Users\Mark\Source\repos\NotifyPropertyChanged\TestApplication\obj\Debug\TestApplication.exe
+C:\Users\Mark\Source\repos\NotifyPropertyChanged\TestApplication\obj\Debug\TestApplication.pdb
