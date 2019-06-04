@@ -3,3 +3,11 @@
 ################################################################################
 
 /.vs
+/CSharpTesting/NewFrameworkFeatures/obj
+/CSharpTesting/Testing1/obj/Release
+/NotifyPropertyChanged/TestApplication/obj/Release
+/RtfHtmlConverter/ClassLibrary1/obj/Release
+/ExchangeTestProject/MonitoringApp/obj
+/ExchangeTestProject/WebclientDownloader/obj/Release
+/RtfHtmlConverter/RtfHtmlConverter/obj/Release
+/RtfHtmlConverter/WindowsFormsApp1/obj/Release
