@@ -56,6 +56,11 @@ namespace TestConsole
 
                 var newestBlogs = unitOfWork.Blogs.GetLatestBlogs(10);
             }
+
+            using (var orm = new MainContext())
+            {
+
+            }
         }
     }
 }
