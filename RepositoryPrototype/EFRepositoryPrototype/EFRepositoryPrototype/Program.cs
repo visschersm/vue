@@ -17,6 +17,11 @@ namespace EFRepositoryPrototype
 
                 context.SaveChanges();
             }
+
+            var context = new MainContext();
+
+            var customerService = new CustomerService(context);
+
         }
     }
 }

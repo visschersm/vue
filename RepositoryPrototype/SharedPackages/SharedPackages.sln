@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer.Entities", "DataL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer.DbModel", "DataLayer.DbModel\DataLayer.DbModel.csproj", "{85AA4A7E-0340-44AC-9332-1A29889A41B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer.Customers", "ServiceLayer.Customers\ServiceLayer.Customers.csproj", "{54293C98-FC8E-40FA-9679-AF2C4A42D6F6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{85AA4A7E-0340-44AC-9332-1A29889A41B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85AA4A7E-0340-44AC-9332-1A29889A41B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85AA4A7E-0340-44AC-9332-1A29889A41B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{54293C98-FC8E-40FA-9679-AF2C4A42D6F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54293C98-FC8E-40FA-9679-AF2C4A42D6F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54293C98-FC8E-40FA-9679-AF2C4A42D6F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54293C98-FC8E-40FA-9679-AF2C4A42D6F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

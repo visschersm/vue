@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFRepositoryPrototype", "EFRepositoryPrototype\EFRepositoryPrototype.csproj", "{4F04194D-6DEB-40E9-8FF4-4C8851418A8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFRepositoryPrototype", "EFRepositoryPrototype\EFRepositoryPrototype.csproj", "{4F04194D-6DEB-40E9-8FF4-4C8851418A8E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer.DbModel", "..\SharedPackages\DataLayer.DbModel\DataLayer.DbModel.csproj", "{29F1CD42-FEDD-4413-8849-5C6DCBF1C832}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer.Entities", "..\SharedPackages\DataLayer.Entities\DataLayer.Entities.csproj", "{0D27709C-30D9-4644-9823-4450608CCCCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{4F04194D-6DEB-40E9-8FF4-4C8851418A8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F04194D-6DEB-40E9-8FF4-4C8851418A8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F04194D-6DEB-40E9-8FF4-4C8851418A8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F1CD42-FEDD-4413-8849-5C6DCBF1C832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F1CD42-FEDD-4413-8849-5C6DCBF1C832}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F1CD42-FEDD-4413-8849-5C6DCBF1C832}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F1CD42-FEDD-4413-8849-5C6DCBF1C832}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D27709C-30D9-4644-9823-4450608CCCCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D27709C-30D9-4644-9823-4450608CCCCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D27709C-30D9-4644-9823-4450608CCCCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D27709C-30D9-4644-9823-4450608CCCCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
