@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Mark Visschers</Authors>
+    <Description>Example project setup with generic repositories and abstracted data connections</Description>
+  </PropertyGroup>
+
+</Project>
