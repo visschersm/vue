@@ -1,7 +1,0 @@
-C:\Users\Mark\Source\repos\ExchangeTestProject\WebclientDownloader\bin\Debug\WebclientDownloader.exe.config
-C:\Users\Mark\Source\repos\ExchangeTestProject\WebclientDownloader\bin\Debug\WebclientDownloader.exe
-C:\Users\Mark\Source\repos\ExchangeTestProject\WebclientDownloader\bin\Debug\WebclientDownloader.pdb
-C:\Users\Mark\Source\repos\ExchangeTestProject\WebclientDownloader\obj\Debug\WebclientDownloader.csprojAssemblyReference.cache
-C:\Users\Mark\Source\repos\ExchangeTestProject\WebclientDownloader\obj\Debug\WebclientDownloader.csproj.CoreCompileInputs.cache
-C:\Users\Mark\Source\repos\ExchangeTestProject\WebclientDownloader\obj\Debug\WebclientDownloader.exe
-C:\Users\Mark\Source\repos\ExchangeTestProject\WebclientDownloader\obj\Debug\WebclientDownloader.pdb
