@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace ExceptionHandling
 {
@@ -23,6 +24,33 @@ namespace ExceptionHandling
             }
 
             new Thread(GoAysncException).Start();
+
+            //Task task = Task.Run(() =>
+            //{
+            //    Thread.Sleep(1000);
+            //    throw null;
+            //});
+
+            Task task = Task.Run<int>(() =>
+            {
+                Thread.Sleep(1000);
+                throw null;
+
+                return 1;
+            });
+
+            try
+            {
+
+                task.Wait();
+            }
+            catch (AggregateException aggregateException)
+            {
+                if (aggregateException.InnerException is NullReferenceException)
+                    Console.WriteLine("Null from task");
+                else
+                    throw;
+            }
         }
 
         public static void SyncExceptionFunction()
