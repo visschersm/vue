@@ -12,10 +12,15 @@ namespace PrimeService.UnitTests.Services
             _primeService = new PrimeService();
         }
 
-        [TestMethod]
-        public void TestMethod1()
+        [DataTestMethod]
+        [DataRow(-1)]
+        [DataRow(0)]
+        [DataRow(1)]
+        public void IsPrime_ValuesLessThan2_ReturnFalse(int value)
         {
-            
+            var result = _primeService.IsPrime(value);
+
+            Assert.IsFalse(result, $"{value} should not be prime");
         }
     }
 }
