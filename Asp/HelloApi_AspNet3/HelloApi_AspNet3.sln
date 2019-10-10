@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApi", "TestApi\TestApi.csproj", "{47AF00A9-2D35-4444-B4C6-9EDEA9A17B16}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloApi_AspNet3", "HelloApi_AspNet3\HelloApi_AspNet3.csproj", "{2B9CBA87-B77A-4E68-8828-E22582C9494B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{47AF00A9-2D35-4444-B4C6-9EDEA9A17B16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47AF00A9-2D35-4444-B4C6-9EDEA9A17B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47AF00A9-2D35-4444-B4C6-9EDEA9A17B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47AF00A9-2D35-4444-B4C6-9EDEA9A17B16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B9CBA87-B77A-4E68-8828-E22582C9494B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B9CBA87-B77A-4E68-8828-E22582C9494B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B9CBA87-B77A-4E68-8828-E22582C9494B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B9CBA87-B77A-4E68-8828-E22582C9494B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {00DD8005-68FF-462A-9A45-D647E5692F93}
+		SolutionGuid = {3AF0BD1C-FB20-4E52-A699-45B4AAF01236}
 	EndGlobalSection
 EndGlobal
