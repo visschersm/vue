@@ -97,7 +97,7 @@ namespace Tests.UnitTests.ServiceLayer
         public TestDataContext Context { get; }
         public MapperConfigurationExpression MappingConfig { get; }
 
-        internal IGenericService<TestEntity> CreateBaseService()
+        internal IGenericService<Guid, TestEntity> CreateBaseService()
         {
             var mapper = new MapperConfiguration(MappingConfig).CreateMapper();
 
@@ -110,7 +110,7 @@ namespace Tests.UnitTests.ServiceLayer
 
     }
 
-    internal class TestService : BaseService<TestEntity>
+    internal class TestService : BaseService<Guid, TestEntity>
     {
         public TestService(IDataContext context, IMapper mapper)
             : base(context, mapper)

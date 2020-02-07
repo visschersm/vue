@@ -11,8 +11,8 @@ using ViewModels.Interfaces;
 
 namespace ServiceLayer.Interfaces
 {
-    public interface IGenericService<TEntity>
-        where TEntity : class, IEntity
+    public interface IGenericService<TKey, TEntity>
+        where TEntity : class, IEntity<TKey>
     {
         Task<TView> CreateAsync<TCreate, TView>(TCreate createView)
             where TCreate : ICreateView<TEntity>
@@ -21,10 +21,9 @@ namespace ServiceLayer.Interfaces
             where TCreate : ICreateView<TEntity>
             where TView : IViewOf<TEntity>;
 
-        Task<TView> GetByIdAsync<TKey, TView>(TKey id)
-            where TKey : IEquatable<TKey>
+        Task<TView> GetByIdAsync<TView>(TKey id)
             where TView : IViewOf<TEntity>;
-        Task<IEnumerable<TView>> GetByIdAsync<TKey, TView>(IEnumerable<TKey> ids)
+        Task<IEnumerable<TView>> GetByIdAsync<TView>(IEnumerable<TKey> ids)
             where TView : IViewOf<TEntity>;
 
         Task<IEnumerable<TView>> GetAsync<TView>(
@@ -44,15 +43,13 @@ namespace ServiceLayer.Interfaces
             params string[] includes)
             where TView : IViewOf<TEntity>;
 
-        Task<TView> UpdateAsync<TKey, TUpdate, TView>(TKey id, TUpdate updateView)
-            where TKey : IEquatable<TKey>
+        Task<TView> UpdateAsync<TUpdate, TView>(TKey id, TUpdate updateView)
             where TUpdate : IUpdateView<TEntity>
             where TView : IViewOf<TEntity>;
         Task<IEnumerable<TView>> UpdateAsync<TUpdate, TView>(TUpdate[] updateViews)
             where TUpdate : IBatchUpdateView<TEntity>
             where TView : IViewOf<TEntity>;
 
-        Task DeleteAsync<TKey>(TKey id)
-            where TKey : IEquatable<TKey>;
+        Task DeleteAsync(TKey id);
     }
 }

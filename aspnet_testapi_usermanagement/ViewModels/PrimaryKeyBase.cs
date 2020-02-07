@@ -6,6 +6,6 @@ namespace ViewModels
     public abstract class PrimaryKeyBase<TEntity> : IPrimaryKey<TEntity>
         where TEntity : class, IEntity
     {
-        public object Id { get; }
+        public object Id { get; } = null!;
     }
 }

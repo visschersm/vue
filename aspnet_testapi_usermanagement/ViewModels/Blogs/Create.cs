@@ -7,6 +7,6 @@ namespace ViewModels.Blogs
     public class Create : ICreateView<Blog>
     {
         [Required]
-        public string Name { get; set; }
+        public string Title { get; set; } = null!;
     }
 }

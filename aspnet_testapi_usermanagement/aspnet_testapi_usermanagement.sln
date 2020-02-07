@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.AcceptanceTests", "Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer.API", "DataLayer.BlogContext\DataLayer.API.csproj", "{A83DB33C-EE8B-4EDC-AC38-5D90A67CF404}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer.Users", "ServiceLayer.Users\ServiceLayer.Users.csproj", "{1D0DBC66-FC24-49DA-826C-BCC3AC987207}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceLayer.Users", "ServiceLayer.Users\ServiceLayer.Users.csproj", "{1D0DBC66-FC24-49DA-826C-BCC3AC987207}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

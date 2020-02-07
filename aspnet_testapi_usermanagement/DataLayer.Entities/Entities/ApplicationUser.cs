@@ -8,18 +8,17 @@ namespace DataLayer.Entities
     {
         [Required]
         [MaxLength(100)]
-        public string FirstName { get; set; }
+        public string FirstName { get; set; } = string.Empty;
 
         public string? MiddleName { get; set; }
 
         [Required]
         [MaxLength(100)]
-        public string LastName { get; set; }
-
-        [Required]
-        public byte Level { get; set; }
+        public string LastName { get; set; } = string.Empty;
 
         [Required]
         public DateTime CreateDate { get; set; }
+
+        public string FullName => $"{FirstName} {MiddleName ?? string.Empty} {LastName}";
     }
 }

@@ -12,8 +12,8 @@ using ViewModels.Interfaces;
 
 namespace ServiceLayer
 {
-    public abstract class BaseService<TEntity> : IGenericService<TEntity>
-        where TEntity : class, IEntity
+    public abstract class BaseService<TKey, TEntity> : IGenericService<TKey, TEntity>
+        where TEntity : class, IEntity<TKey>
     {
         protected readonly IDataContext _context;
         protected readonly DbSet<TEntity> _repository;
@@ -55,8 +55,7 @@ namespace ServiceLayer
 
         }
 
-        public async Task DeleteAsync<TKey>(TKey id)
-            where TKey : IEquatable<TKey>
+        public async Task DeleteAsync(TKey id)
         {
             var entity = await _repository.Where(x => x.Id.Equals(id))
                 .SingleOrDefaultAsync();
@@ -132,8 +131,7 @@ namespace ServiceLayer
             return await selectedQuery.ToArrayAsync();
         }
 
-        public async Task<TView> GetByIdAsync<TKey, TView>(TKey id)
-            where TKey : IEquatable<TKey>
+        public async Task<TView> GetByIdAsync<TView>(TKey id)
             where TView : IViewOf<TEntity>
         {
             var result = await _mapper.ProjectTo<TView>(
@@ -144,7 +142,7 @@ namespace ServiceLayer
             return result;
         }
 
-        public async Task<IEnumerable<TView>> GetByIdAsync<TKey, TView>(
+        public async Task<IEnumerable<TView>> GetByIdAsync<TView>(
             IEnumerable<TKey> ids)
             where TView : IViewOf<TEntity>
         {
@@ -156,8 +154,7 @@ namespace ServiceLayer
             return result;
         }
 
-        public Task<TView> UpdateAsync<TKey, TUpdate, TView>(TKey id, TUpdate updateView)
-            where TKey : IEquatable<TKey>
+        public Task<TView> UpdateAsync<TUpdate, TView>(TKey id, TUpdate updateView)
             where TUpdate : IUpdateView<TEntity>
             where TView : IViewOf<TEntity>
         {

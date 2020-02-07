@@ -8,7 +8,7 @@ using ViewModels.Interfaces;
 
 namespace ServiceLayer.Users
 {
-    public class UserService : BaseService<User>, IUserService
+    public class UserService : BaseService<int, User>, IUserService
     {
         private readonly ApplicationUserManager _userManager;
 
