@@ -1,5 +1,5 @@
-﻿using DataLayer.Entities.Interfaces;
-using System;
+﻿using System;
+using ViewModels.Interfaces;
 
 namespace DataLayer.Entities
 {
