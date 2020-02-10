@@ -17,6 +17,6 @@ namespace ViewModels
             }
         }
 
-        private static Expression<Func<TEntity, TView>> _selectExpression;
+        private static Expression<Func<TEntity, TView>> _selectExpression = null!;
     }
 }

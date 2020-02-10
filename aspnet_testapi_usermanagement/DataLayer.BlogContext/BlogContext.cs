@@ -1,5 +1,6 @@
 ﻿using DataLayer.API.Interfaces;
 using DataLayer.Entities;
+using DataLayer.Entities.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataLayer.API
@@ -16,8 +17,8 @@ namespace DataLayer.API
         {
         }
 
-        public DbSet<Blog> Blogs { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<Blog> Blogs { get; set; } = null!;
+        public DbSet<User> Users { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

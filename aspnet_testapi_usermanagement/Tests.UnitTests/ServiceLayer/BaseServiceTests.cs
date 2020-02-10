@@ -32,7 +32,7 @@ namespace Tests.UnitTests.ServiceLayer
 
             };
 
-            var result = await service.CreateAsync<TestCreateView, TestView>(createView);
+            var result = await service.CreateAsync<TestView>(createView);
 
             Assert.IsNotNull(result);
             Assert.IsInstanceOfType(result, typeof(TestView));
@@ -51,7 +51,7 @@ namespace Tests.UnitTests.ServiceLayer
             var createView = (TestCreateView)null!;
 
             await Assert.ThrowsExceptionAsync<ArgumentNullException>(async () =>
-                await service.CreateAsync<TestCreateView, TestView>(createView));
+                await service.CreateAsync<TestView>(createView));
         }
 
         [TestMethod]
@@ -69,7 +69,7 @@ namespace Tests.UnitTests.ServiceLayer
             };
 
             await Assert.ThrowsExceptionAsync<AutoMapperMappingException>(async () =>
-                await service.CreateAsync<TestCreateView, TestView>(createView));
+                await service.CreateAsync<TestView>(createView));
         }
     }
 
@@ -130,6 +130,6 @@ namespace Tests.UnitTests.ServiceLayer
         {
         }
 
-        public DbSet<TestEntity> TestEntities { get; set; }
+        public DbSet<TestEntity> TestEntities { get; set; } = null!;
     }
 }

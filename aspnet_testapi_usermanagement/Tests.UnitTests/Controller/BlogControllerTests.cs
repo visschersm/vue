@@ -16,7 +16,7 @@ namespace Tests.UnitTests.Controller
         {
             var factory = new BlogControllerFactory();
 
-            factory.BlogService.Setup(x => x.CreateAsync<ViewModels.Blogs.Create, ViewModels.Blogs.Simple>(
+            factory.BlogService.Setup(x => x.CreateAsync<ViewModels.Blogs.Simple>(
                 It.IsAny<ViewModels.Blogs.Create>()))
                 .ReturnsAsync(new ViewModels.Blogs.Simple { });
 
@@ -35,7 +35,7 @@ namespace Tests.UnitTests.Controller
         {
             var factory = new BlogControllerFactory();
 
-            factory.BlogService.Setup(x => x.CreateAsync<ViewModels.Blogs.Create, ViewModels.Blogs.Simple>(
+            factory.BlogService.Setup(x => x.CreateAsync<ViewModels.Blogs.Simple>(
                 It.IsAny<ViewModels.Blogs.Create>()))
                 .ThrowsAsync(new AutoMapperMappingException { });
 

@@ -14,11 +14,9 @@ namespace ServiceLayer.Interfaces
     public interface IGenericService<TKey, TEntity>
         where TEntity : class, IEntity<TKey>
     {
-        Task<TView> CreateAsync<TCreate, TView>(TCreate createView)
-            where TCreate : ICreateView<TEntity>
-            where TView : IViewOf<TEntity>;
-        Task<IEnumerable<TView>> CreateAsync<TCreate, TView>(TCreate[] createViews)
-            where TCreate : ICreateView<TEntity>
+        Task<TView?> CreateAsync<TView>(ViewModels.Interfaces.ICreateView<TEntity> createView)
+            where TView : class, IViewOf<TEntity>;
+        Task<IEnumerable<TView>> CreateAsync<TView>(ViewModels.Interfaces.ICreateView<TEntity>[] createViews)
             where TView : IViewOf<TEntity>;
 
         Task<TView> GetByIdAsync<TView>(TKey id)
@@ -27,8 +25,8 @@ namespace ServiceLayer.Interfaces
             where TView : IViewOf<TEntity>;
 
         Task<IEnumerable<TView>> GetAsync<TView>(
-            Expression<Func<TEntity, bool>> filter = null,
-            Func<IQueryable<TView>, IOrderedQueryable<TView>> orderBy = null,
+            Expression<Func<TEntity, bool>>? filter = null,
+            Func<IQueryable<TView>, IOrderedQueryable<TView>>? orderBy = null,
             int? skip = null,
             int? take = null,
             params string[] includes)
@@ -36,20 +34,19 @@ namespace ServiceLayer.Interfaces
 
         Task<IEnumerable<TView>> GetAsync<TView>(
             Expression<Func<TEntity, TView>> select,
-            Expression<Func<TEntity, bool>> filter = null,
-            Func<IQueryable<TView>, IOrderedQueryable<TView>> orderBy = null,
+            Expression<Func<TEntity, bool>>? filter = null,
+            Func<IQueryable<TView>, IOrderedQueryable<TView>>? orderBy = null,
             int? skip = null,
             int? take = null,
             params string[] includes)
             where TView : IViewOf<TEntity>;
 
-        Task<TView> UpdateAsync<TUpdate, TView>(TKey id, TUpdate updateView)
-            where TUpdate : IUpdateView<TEntity>
-            where TView : IViewOf<TEntity>;
-        Task<IEnumerable<TView>> UpdateAsync<TUpdate, TView>(TUpdate[] updateViews)
-            where TUpdate : IBatchUpdateView<TEntity>
+        Task<TView> UpdateAsync<TView>(TKey id, IUpdateView<TEntity> updateView)
             where TView : IViewOf<TEntity>;
 
-        Task DeleteAsync(TKey id);
+        Task<IEnumerable<TView>> UpdateAsync<TView>(ViewModels.Interfaces.IBatchUpdateView<TEntity>[] updateViews)
+            where TView : IViewOf<TEntity>;
+
+        Task<bool> DeleteAsync(TKey id);
     }
 }

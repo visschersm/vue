@@ -23,12 +23,15 @@ namespace ServiceLayer
         {
             _context = context;
             _repository = context.Set<TEntity>();
+
+            if (_repository == null)
+                throw new ArgumentNullException(nameof(_repository));
+
             _mapper = mapper;
         }
 
-        public async Task<TView> CreateAsync<TCreate, TView>(TCreate createView)
-            where TCreate : ICreateView<TEntity>
-            where TView : IViewOf<TEntity>
+        public async Task<TView?> CreateAsync<TView>(ViewModels.Interfaces.ICreateView<TEntity> createView)
+            where TView : class, IViewOf<TEntity>
         {
             var newEntity = _mapper.Map<TEntity>(createView);
 
@@ -40,8 +43,7 @@ namespace ServiceLayer
             return result;
         }
 
-        public async Task<IEnumerable<TView>> CreateAsync<TCreate, TView>(TCreate[] createViews)
-            where TCreate : ICreateView<TEntity>
+        public async Task<IEnumerable<TView>> CreateAsync<TView>(ViewModels.Interfaces.ICreateView<TEntity>[] createViews)
             where TView : IViewOf<TEntity>
         {
             var newEntities = _mapper.Map<TEntity>(createViews);
@@ -55,8 +57,16 @@ namespace ServiceLayer
 
         }
 
-        public async Task DeleteAsync(TKey id)
+        public async Task<bool> DeleteAsync(TKey id)
         {
+            if (id == null)
+                throw new ArgumentNullException(nameof(id));
+
+            //if (EqualityComparer<TKey>.Default.Equals(obj, default(TKey)))
+            //{
+            //    return obj;
+            //}
+
             var entity = await _repository.Where(x => x.Id.Equals(id))
                 .SingleOrDefaultAsync();
 
@@ -65,11 +75,13 @@ namespace ServiceLayer
 
             _repository.Remove(entity);
             await _context.SaveChangesAsync();
+
+            return true;
         }
 
         public async Task<IEnumerable<TView>> GetAsync<TView>(
-            Expression<Func<TEntity, bool>> filter = null,
-            Func<IQueryable<TView>, IOrderedQueryable<TView>> orderBy = null,
+            Expression<Func<TEntity, bool>>? filter = null,
+            Func<IQueryable<TView>, IOrderedQueryable<TView>>? orderBy = null,
             int? skip = null,
             int? take = null,
             params string[] includes)
@@ -101,8 +113,8 @@ namespace ServiceLayer
 
         public async Task<IEnumerable<TView>> GetAsync<TView>(
             Expression<Func<TEntity, TView>> select,
-            Expression<Func<TEntity, bool>> filter = null,
-            Func<IQueryable<TView>, IOrderedQueryable<TView>> orderBy = null,
+            Expression<Func<TEntity, bool>>? filter = null,
+            Func<IQueryable<TView>, IOrderedQueryable<TView>>? orderBy = null,
             int? skip = null,
             int? take = null,
             params string[] includes) where TView : IViewOf<TEntity>
@@ -154,15 +166,30 @@ namespace ServiceLayer
             return result;
         }
 
-        public Task<TView> UpdateAsync<TUpdate, TView>(TKey id, TUpdate updateView)
-            where TUpdate : IUpdateView<TEntity>
+        public async Task<TView> UpdateAsync<TView>(TKey id, IUpdateView<TEntity> updateView)
             where TView : IViewOf<TEntity>
         {
-            throw new NotImplementedException();
+            var query = _repository.AsQueryable();
+
+            if (typeof(ISoftDeletable).IsAssignableFrom(typeof(TEntity)))
+            {
+                query = query.Select(x => (ISoftDeletable)x)
+                    .Where(x => !x.DeletedOn.HasValue)
+                    .Select(x => (TEntity)x);
+            }
+
+            var toUpdate = await query.SingleOrDefaultAsync(x => x.Id.Equals(id));
+
+            _mapper.Map(updateView, toUpdate);
+
+            await _context.SaveChangesAsync();
+
+            var result = _mapper.Map<TView>(toUpdate);
+
+            return result;
         }
 
-        public Task<IEnumerable<TView>> UpdateAsync<TUpdate, TView>(TUpdate[] updateViews)
-            where TUpdate : IBatchUpdateView<TEntity>
+        public Task<IEnumerable<TView>> UpdateAsync<TView>(ViewModels.Interfaces.IBatchUpdateView<TEntity>[] updateViews)
             where TView : IViewOf<TEntity>
         {
             throw new NotImplementedException();

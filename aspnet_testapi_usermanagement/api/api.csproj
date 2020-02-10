@@ -5,6 +5,7 @@
     <UserSecretsId>9d21e47a-7c08-42c5-9c3c-95f94b73faca</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <nullable>enable</nullable>
   </PropertyGroup>
 
   <ItemGroup>

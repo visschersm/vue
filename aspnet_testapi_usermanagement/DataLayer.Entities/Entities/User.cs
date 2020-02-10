@@ -1,9 +1,9 @@
 ﻿using DataLayer.Entities.Interfaces;
 using System;
 
-namespace DataLayer.Entities
+namespace DataLayer.Entities.Entities
 {
-    public class User : BaseEntity<int>, ISoftDeletable
+    public class User : BaseEntity<Guid>, ISoftDeletable
     {
         public DateTime? DeletedOn { get; set; }
     }

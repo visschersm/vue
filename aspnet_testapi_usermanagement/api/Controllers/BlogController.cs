@@ -44,7 +44,7 @@ namespace api.Controllers
 
             try
             {
-                var result = await _blogService.CreateAsync<ViewModels.Blogs.Create, ViewModels.Blogs.Simple>(create);
+                var result = await _blogService.CreateAsync<ViewModels.Blogs.Simple>(create);
 
                 if (result == null)
                     return BadRequest("Could not create blog");
@@ -92,6 +92,61 @@ namespace api.Controllers
             var result = await _blogService.GetAsync<ViewModels.Blogs.List>();
 
             return Ok(result);
+        }
+
+        /// <summary>
+        /// Updates a specific Blog with a given Id.
+        /// </summary>
+        /// <param name="id">The Id of a specific Blog object.</param>
+        /// <param name="updateView">The view of the blog with updated values.</param>
+        /// <returns>
+        /// 400 if given update view is not valid.
+        /// 500 if something went wrong updating the Blog.
+        /// 200 with the updated full BlogView.
+        /// </returns>
+        [HttpPut]
+        [Route("{id}")]
+        [ProducesResponseType(typeof(ViewModels.Blogs.Full), StatusCodes.Status200OK)]
+        public async Task<IActionResult> UpdateAsync(Guid id, [FromBody]ViewModels.Blogs.Update updateView)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var result = await _blogService.UpdateAsync<ViewModels.Blogs.Full>(id, updateView);
+
+            if (result == null)
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Could not update Blog with {nameof(updateView)}: {updateView}");
+
+            return Ok(result);
+        }
+
+        /// <summary>
+        /// Delete the Blog with the given Id
+        /// </summary>
+        /// <param name="id">The id of the Blog to delete.</param>
+        /// <returns>
+        /// 500 if the Blog could not be deleted.
+        /// 204 if the Blog is deleted successfully.
+        /// </returns>
+        [HttpDelete]
+        [Route("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public async Task<IActionResult> DeleteAsync(Guid id)
+        {
+            try
+            {
+                var result = await _blogService.DeleteAsync(id);
+
+                if (!result)
+                    return StatusCode(StatusCodes.Status500InternalServerError, $"Could not delete the Blog with {nameof(id)}: {id}");
+
+                return StatusCode(StatusCodes.Status204NoContent);
+            }
+            catch (ArgumentNullException)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Could not delete the Blog with {nameof(id)}: {id}");
+                throw;
+            }
         }
     }
 }

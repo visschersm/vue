@@ -11,6 +11,7 @@ namespace ViewModels.Blogs
             CreateMap<Blog, ViewModels.Blogs.Simple>();
             CreateMap<Blog, ViewModels.Blogs.Full>();
             CreateMap<Blog, ViewModels.Blogs.List>();
+            CreateMap<ViewModels.Blogs.Update, Blog>();
         }
     }
 }

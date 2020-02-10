@@ -22,8 +22,8 @@ namespace Tests.IntegrationTests
     [TestClass]
     public class BlogControllerTests
     {
-        private TestServer _server;
-        private HttpClient _client;
+        private TestServer _server = null!;
+        private HttpClient _client = null!;
 
         [TestInitialize]
         public void Initialize()
@@ -66,7 +66,7 @@ namespace Tests.IntegrationTests
             Assert.IsNotNull(blog);
         }
 
-        public class TestAuthHandler : AuthenticationHandler<AuthenticationSchemeOptions>
+        internal class TestAuthHandler : AuthenticationHandler<AuthenticationSchemeOptions>
         {
             public TestAuthHandler(IOptionsMonitor<AuthenticationSchemeOptions> options,
                 ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock)

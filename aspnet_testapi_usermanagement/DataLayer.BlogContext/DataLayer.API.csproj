@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <nullable>enable</nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,12 +10,8 @@
     <Compile Remove="Migrations\20200205142529_InitialCreate.Designer.cs" />
     <Compile Remove="Migrations\20200206105550_InitialUser.cs" />
     <Compile Remove="Migrations\20200206105550_InitialUser.Designer.cs" />
-    <Compile Remove="Migrations\ApplicationDb\20200205143916_InitialIdentity.cs" />
-    <Compile Remove="Migrations\ApplicationDb\20200205143916_InitialIdentity.Designer.cs" />
-    <Compile Remove="Migrations\ApplicationDb\20200206105416_InitialCreate.cs" />
-    <Compile Remove="Migrations\ApplicationDb\20200206105416_InitialCreate.Designer.cs" />
-    <Compile Remove="Migrations\ApplicationDb\20200206110104_Test.cs" />
-    <Compile Remove="Migrations\ApplicationDb\20200206110104_Test.Designer.cs" />
+    <Compile Remove="Migrations\ApplicationDb\20200210133426_BlogUser.cs" />
+    <Compile Remove="Migrations\ApplicationDb\20200210133426_BlogUser.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
