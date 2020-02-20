@@ -106,5 +106,17 @@ namespace api.Controllers
                 throw;
             }
         }
+
+        /*[AllowAnonymous]
+        [HttpPost("authenticate")]
+        public async Task<IActionResult> AuthenticateAsync([FromBody]ViewModels.Users.Authenticate model)
+        {
+            var user = await _userService.AuthenticateAsync(model);
+
+            if (user == null)
+                return BadRequest(new { message = "Username or password is incorrect" });
+
+            return Ok(user);
+        }*/
     }
 }

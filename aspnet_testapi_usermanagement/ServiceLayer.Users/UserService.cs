@@ -26,10 +26,18 @@ namespace ServiceLayer.Users
 
         public UserService(ApplicationUserManager userManager, IDataContext context, IMapper mapper)
         {
+            ApplicationDbContext applicationDbContext;
             _context = context;
             _repository = _context.Set<User>();
             _userManager = userManager;
             _mapper = mapper;
+        }
+
+        public Task<TView> AuthenticateAsync<TView>(Authenticate model)
+            where TView : IViewOf<User>
+        {
+
+            throw new NotImplementedException();
         }
 
         public async Task<Tuple<TView?, IEnumerable<IdentityError>>> CreateAsync<TView>(ViewModels.Users.Create createView)
@@ -91,10 +99,12 @@ namespace ServiceLayer.Users
 
             if (orderBy != null)
             {
-                return await orderBy(query.ProjectTo<TView>(_mapper.ConfigurationProvider))
-                    .Skip(skip.Value)
-                    .Take(take.Value)
-                    .ToArrayAsync();
+                var orderedQuery = orderBy(query.ProjectTo<TView>(_mapper.ConfigurationProvider));
+
+                if (skip.HasValue && take.HasValue)
+                    return await orderedQuery.Skip(skip.Value).Take(take.Value).ToArrayAsync();
+
+                return await orderedQuery.ToArrayAsync();
             }
 
             var userIds = await query.Select(x => x.Id).ToArrayAsync();
@@ -117,7 +127,7 @@ namespace ServiceLayer.Users
 
         public Task<TView> GetByIdAsync<TView>(Guid id) where TView : IViewOf<User>
         {
- 
+
             throw new NotImplementedException();
         }
 

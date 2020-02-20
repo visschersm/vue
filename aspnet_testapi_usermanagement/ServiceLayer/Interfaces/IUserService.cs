@@ -6,6 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using ViewModels.Interfaces;
+using ViewModels.Users;
 
 namespace ServiceLayer.Interfaces
 {
@@ -46,5 +47,7 @@ namespace ServiceLayer.Interfaces
             where TView : IViewOf<User>;
 
         Task<bool> DeleteAsync(Guid id);
+        Task<TView> AuthenticateAsync<TView>(Authenticate model)
+            where TView : IViewOf<User>;
     }
 }
